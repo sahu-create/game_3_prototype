@@ -37,8 +37,22 @@ public class playercontroller : MonoBehaviour
             Debug.Log("Load");
 
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            attack();
+        }
+
+        
 
         Move();
+    }
+    
+    void attack()
+    {
+
+
+        anim.SetTrigger("Side_attack_left");
+        anim.SetTrigger("Side_attack");
     }
     void Move()
     {
@@ -57,6 +71,7 @@ public class playercontroller : MonoBehaviour
         anim.SetFloat("look X", lookDirection.x);
         anim.SetFloat("look Y", lookDirection.y);
         anim.SetFloat("Speed", move.magnitude);
+
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
